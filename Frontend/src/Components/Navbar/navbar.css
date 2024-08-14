@@ -1,0 +1,195 @@
+.navbar{
+
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1 3 -2 black;
+}
+
+.nav-logo{
+    gap: 10px;
+}
+
+.nav-logo p{
+    color: #171717;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.nav-category{
+    color: #626262;
+    font-size: 20px;
+    font-weight: 500;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-category li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.nav-category li hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: #ff4141;
+}
+
+
+.cart-login{
+    gap: 45px;
+    position: relative;
+}
+
+.cart-login button{
+    font-size: 15px ;
+    font-weight: 500;
+    padding: 9px 23px;
+    border-radius: 24px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cart-login button:active{
+    background: #f3f3f3;
+}
+
+.cart-login .badge{
+    height: 22px;
+    font-size: 14px;
+    /* padding: 1px; */
+    /* text-align: center; */
+    width: 22px;
+    justify-content: center;
+    background-color: red;
+    border-radius: 11px;
+    color: white;
+    /* position: absolute; */
+    margin-top: -35px;
+    margin-left: -55px;
+    right: 9px;
+    top: 10px;
+}
+
+
+Link{
+    text-decoration: none;
+}
+
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown{
+    display: none;
+}
+
+
+
+@media(max-width:1280px){
+    .navbar{
+        padding: 12px 50px;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .nav-logo p{
+        font-size: 25px;
+    }
+    .nav-category{
+        gap: 30px;
+        font-size: 25px;
+    }
+    .cart-login{
+        gap: 30px;
+    }
+    .cart-login button{
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+
+    }
+    .cart-login .badge{
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width:1024px){
+    .navbar{
+        padding: 12px 30px;
+    }
+
+    .nav-category{
+        gap: 25px;
+        font-size: 14px;
+    }
+
+    .cart-login button{
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+
+    }
+    .cart-login img{
+        width: 30px;
+    }
+    .cart-login .badge{
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media(max-width:800px){
+    .navbar{
+        padding: 10px 0;
+    }
+    .nav-dropdown{
+        display: block;
+        width: 30px;
+        rotate: -90deg;
+        transition: .5s;
+    }
+    .nav-category{
+        display: flex;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        justify-content: center;
+        top: 50px;
+    }
+    .nav-menu-visible{
+        display: flex;
+    }
+    .nav-dropdown.open{
+        transform: rotate(90deg);
+    }
+}
+
+@media(max-width:500px){
+    .navbar{
+        width: 8px 0;
+        gap: 0;
+    }
+    .nav-logo{
+        transform: scale(.8);
+    }
+    .nav-category{
+        height: 70px;
+        top: 50px;
+
+    }
+    .cart-login{
+        transform: scale(.8);
+    }
+}
