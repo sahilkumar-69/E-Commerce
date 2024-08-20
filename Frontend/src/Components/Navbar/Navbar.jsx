@@ -16,13 +16,23 @@ const Navbar = () => {
     e.target.classList.toggle("open");
   };
 
+  const logout = (e) => {
+    localStorage.removeItem("auth_token");
+    window.location.replace("/");
+  };
+
   return (
     <div className="navbar flex">
       <div className="nav-logo flex">
         <img src={logo} alt="" />
         <p>Shopper</p>
       </div>
-      <img className="nav-dropdown" onClick={dropDown_Toggle} src={dropdown} alt="" />
+      <img
+        className="nav-dropdown"
+        onClick={dropDown_Toggle}
+        src={dropdown}
+        alt=""
+      />
       <ul ref={menuRef} className="nav-category flex">
         <li onClick={() => setmenu("shop")}>
           <Link style={{ textDecoration: "none" }} to="/">
@@ -53,9 +63,13 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="cart-login flex">
-        <Link to="/login">
-          <button>Login</button>{" "}
-        </Link>
+        {localStorage.getItem("auth_token") ? (
+          <button onClick={logout}>Log Out</button>
+        ) : (
+          <Link to="/login">
+            <button>Login</button>{" "}
+          </Link>
+        )}
         <Link to="/cart">
           <img src={cart_icon} alt="" />{" "}
         </Link>
